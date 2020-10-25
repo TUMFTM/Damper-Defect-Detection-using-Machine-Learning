@@ -1,0 +1,45 @@
+### config file for main.py
+## data paramater
+--data_folder_path ./../../../Datensatz/DataForCNN/data
+--dataset_name DD2_raw_512_FlexRay_woCorruptedData
+--dataset_mass_name /testsets/DD_mass_raw_512_FlexRay_TZ/
+--dataset_tire_name /testsets/DD_ReiterEngineering_raw_512_FlexRay/
+--load_mass_data 0
+--load_tire_data 0
+--combine_training_data 0
+--combine_training_dataset 0  # tire mass
+--nSamplesTestSize 250  # number of samples for mass and tire test set per inlier/outlier class (rest of samples can be added to training data if combine_training_data 1)
+--nSamplesTrainingInlier 0 # number of inlier for training data (set to 0 if all training inlier (minus test_size) shall be used for training)
+--combine_testing_data 0
+--balance_training_datasets 0
+--balance_testing_datasets 0
+# available modes: op (optimization), cv (cross-validation), pr (plain run), ev (evaluation)
+--mode cv
+# n_opt_iter - number of iterations for optimization
+--n_opti_iter 250
+--cv_splits 5
+--pos_class 111
+--test_size 0.2
+--val_size 0.2
+# available options: ['detrend', 'fourier', 'minmax_01', 'minmax_11', 'robust', 'quantile', 'power', 'normalizer'] kann aneinander gehängt werden
+--prep_options detrend fourier power
+--nfft 64
+# available options: SPEED_FL SPEED_FR SPEED_RL SPEED_RR ACC_X ACC_Y YAW_RATE  HEIGHT_FL HEIGHT_FR HEIGHT_RL HEIGHT_RR
+--sel_sensors SPEED_FL SPEED_FR SPEED_RL SPEED_RR ACC_X ACC_Y YAW_RATE
+--random 42
+## logging parameter (action='store_true')      nachfolgende Zeilen auskommentieren, wenn sie nicht ausgeführt werden sollen
+--base_log_path ./../../../BMW/VAE/Datasize/
+#--analyse_data
+--save_log
+--save_plot
+--save_model
+--save_scores
+## model hyperparameter
+# available models: sae, dae, vae, pvae # sae=stacked autoencoder, dae=denoising autoencoder, vae=variational autoencoder with deterministic decoder, pvae=variational autoencoder with probabilistic autoencoder
+--model pvae
+--epochs 300
+--batch_size 64
+--optimizer adam
+# model path for evaluation run
+--model_path C:\Users\tzehe\Documents\Fahrwerkdiagnose\Datenanalyse\BMW\VAE\VAE_self\2020_05_10_11h_02_53_pvae\model
+--layer_config 340 100 35

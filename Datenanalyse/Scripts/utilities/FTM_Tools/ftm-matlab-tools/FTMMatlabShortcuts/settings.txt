@@ -1,0 +1,7 @@
+installpath=Install
+iconpath=Utils\Icons
+tilespath=W:\Projekte\! - FTM Matlab Toolbar\Tiles\WorldOSM
+plotmappath=MatlabFileExchange\PlotMap
+matlab2tikzpath=MatlabFileExchange\Matlab2Tikz
+tumcolorspath=Utils
+exportstylespath=ExportStyles
